@@ -1,0 +1,127 @@
+/* =============================================================================
+    Basic responsive mobile menu
+   ========================================================================== */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.menu,
+.menu-item {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.menu-mobile {
+  -webkit-appearance: none;
+  border: none;
+  background-color: #333333;
+  color: white;
+  text-indent: 100px;
+  position: relative;
+  height: 40px;
+  width: 40px;
+}
+.menu-mobile:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  font-family: FontAwesome;
+  font-size: 25px;
+  line-height: 40px;
+  text-align: center;
+  text-indent: 0;
+  content: "\f0c9";
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .menu-mobile {
+    display: none;
+  }
+}
+
+.nav-click {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  height: 100%;
+  width: 40px;
+  background-color: #bbbbbb;
+}
+.nav-click:before {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  color: white;
+  font-family: FontAwesome;
+  font-size: 15px;
+  line-height: 40px;
+  text-align: center;
+  content: "\f078";
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .nav-click {
+    display: none;
+  }
+}
+
+.menu--parent {
+  display: none;
+}
+.menu--parent.js-menu-active {
+  display: block;
+}
+@media (min-width: 768px) {
+  .menu--parent {
+    display: block;
+  }
+}
+
+.menu--child {
+  display: none;
+}
+.menu--child.js-menu-active {
+  display: block;
+}
+@media (min-width: 768px) {
+  li:hover .menu--child {
+    display: block;
+  }
+}
+
+.menu-item {
+  position: relative;
+}
+@media (min-width: 768px) {
+  .menu-item {
+    float: left;
+  }
+}
+
+@media (min-width: 768px) {
+  .menu-item--level2 {
+    float: none;
+  }
+}
+
+.menu-link {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #666666;
+  background-color: #dddddd;
+  border-bottom: 1px solid white;
+}
+.menu-link:hover {
+  background-color: #cccccc;
+}
+
+.menu-link--level2 {
+  background-color: #bbbbbb;
+}
